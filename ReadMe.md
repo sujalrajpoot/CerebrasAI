@@ -1,7 +1,7 @@
 
-# CerebrasAI
+# Cerebras Unofficial API
 
-This repository provides an interface for interacting with the CerebrasAI API. It includes functionality for initializing the Cerebras environment, copying Chrome user data, refreshing API keys, and generating AI responses using the Cerebras model.
+This repository provides an interface for interacting with the CerebrasAI API. It includes functionality for initializing the Cerebras environment, refreshing API keys, and generating AI responses using the Cerebras model.
 
 # Table of Contents
 
@@ -10,15 +10,11 @@ This repository provides an interface for interacting with the CerebrasAI API. I
 - Usage
 - Project Structure
 - Requirements
-- How It Works
 - Troubleshooting
 - Contributing
 - License
 
 # Features
-
-- Model Initialization: Initialize the CerebrasAI class with any supported model (llama3.1-8b, llama3.1-70b).
-- Copy Chrome User Data: Automatically copies required Chrome user data for cookie-based authentication.
 - API Key Management: Refreshes and updates the demo API key by fetching cookies and making an authenticated request to the Cerebras platform.
 - Text Generation: Interact with Cerebras AI models to generate text completions, including streaming responses.
 - Progress Tracking: Progress bars and terminal spinners for long-running operations.
@@ -27,8 +23,8 @@ This repository provides an interface for interacting with the CerebrasAI API. I
 
 ### Step 1: Clone the Repository
 ```
-git clone https://github.com/sujalrajpoot/CerebrasAI.git
-cd CerebrasAI
+git clone https://github.com/sujalrajpoot/cerebras-unofficial-api.git
+cd cerebras-unofficial-api
 ```
 
 ### Step 2: Install the required dependencies
@@ -38,51 +34,30 @@ pip install -r requirements.txt
 ```
 
 # Usage
-
-### Step 1: Initialization
-- You can initialize the CerebrasAI class with a specific model. Available models include llama3.1-8b and llama3.1-70b:
+- You can initialize the CerebrasUnofficial class with cookies.
 
 ```python
-from cerebras_ai import CerebrasAI
+from cerebras_unofficial import Cerebras_Unofficial
 
-# Initialize with default model
-ai = CerebrasAI()
-
-# Initialize with a specific model
-ai = CerebrasAI(model="llama3.1-70b")
+if __name__ == "__main__":
+   AI = Cerebras_Unofficial('your_cookies')
+   print(AI.chat("Hi"))
 ```
 
-### Generate AI Response
-- You can ask questions to the AI using the ask method, which sends a message to the AI model and returns a response:
 
-```python
-response = ai.ask("What is the meaning of life?")
-print(response)
-```
-
-# Project Structure
-- cerebras_ai.py: The main code file containing the CerebrasAI class with all functionalities.
-- requirements.txt: Contains all the dependencies required for the project.
-- config.json: This file is generated automatically and stores the 
-### API key and related information.
+# Project Files Structure
+- `cerebras_unofficial.py`: The main code file containing the `Cerebras_Unofficial` class with all functionalities.
+- `requirements.txt`: Lists all the dependencies required for the project.
+- `Test.py`: A script to demonstrate the usage of the `Cerebras_Unofficial` class.
+- `ReadMe.md`: Documentation file providing an overview of the project, installation instructions, and usage examples.
 
 # Requirements
 
-- Python 3.7+
-- Chrome WebDriver
-- Selenium
-- tqdm
-- yaspin
-- Cerebras SDK
+- Python 3.8+
 - Requests
 - Fake UserAgent
-# How It Works
-- Initialization: The class is initialized with the model. It checks for existing config files and copies Chrome user data if required.
-- Cookie Fetching: The class uses Selenium to open a headless Chrome session, fetch the necessary cookies, and extract the demo API key.
-- Asking Questions: Once the API key is set, users can interact with Cerebras models by asking questions using the ask method.
 
 # Troubleshooting
-- Chrome WebDriver Error: Ensure that you have the correct version of Chrome WebDriver installed. You can download it from here.
 - API Key Expiration: If your demo API key expires, the program will automatically refresh it, but ensure that your Chrome user data is up-to-date.
 
 # Contributing
@@ -99,4 +74,4 @@ print(response)
 
 
 ## 🚀 About Me
-I'm a skilled Python programmer and experienced web developer. With a strong background in programming and a passion for creating interactive and engaging web experiences, I specialize in crafting dynamic websites and applications. I'm dedicated to transforming ideas into functional and user-friendly digital solutions. Explore my portfolio to see my work in action.
+I'm a skilled full stack Python developer with expertise in object-oriented programming and website reverse engineering. With a strong background in programming and a passion for creating interactive and engaging web experiences, I specialize in crafting dynamic websites and applications. I'm dedicated to transforming ideas into functional and user-friendly digital solutions. Explore my portfolio to see my work in action.
